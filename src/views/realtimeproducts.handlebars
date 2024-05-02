@@ -1,0 +1,26 @@
+{{!-- realtimeproducts.handlebars --}}
+<h1 style="color:white">Real Time Products</h1>
+<h2 style="color:white">Productos actualizados en tiempo real</h2>
+
+<div id="contenedorProductos"></div>
+
+<h2 style="color:white">Formulario para agregar productos</h2>
+
+<form>
+    <input type="text" id="winery" placeholder="Vineria">
+    <input type="text" id="wine" placeholder="Vino">
+    <input type="text" id="location" placeholder="Ubicacion">
+    <input type="text" id="code" placeholder="Código">
+    <input type="text" id="image" value="Sin Imagen">
+    <input type="text" id="category" placeholder="Categoria">
+    <input type="number" id="stock" placeholder="Stock">
+    <input type="number" id="price" placeholder="Precio">
+    <select id="status">
+        <option value="true"> Activo </option>
+        <option value="false"> Inactivo </option>
+    </select>
+    <button type="button" id="btnEnviar"> Enviar </button>
+</form>
+
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+<script src="js/realtime.js"></script>
