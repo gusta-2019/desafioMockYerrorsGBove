@@ -9,10 +9,10 @@ const arrayProd = [];
 
 router.post("/prod", async (req, res, next) => {
     
-    const {wine, winery, price} = req.body; 
+    const {wine, winery, location, code, image, category, stock, price, status } = req.body; 
     
     try {
-        if(!wine || !winery || !price) {
+        if(!wine || !winery || !location || !code || !image || !category || !stock || !price || !status ) {
             
             throw CustomError.crearError({
                 
@@ -26,7 +26,13 @@ router.post("/prod", async (req, res, next) => {
         const prod = {
             wine,
             winery, 
-            price
+            location, 
+            code, 
+            image, 
+            category, 
+            stock, 
+            price,
+            status
         }
 
         arrayProd.push(prod);

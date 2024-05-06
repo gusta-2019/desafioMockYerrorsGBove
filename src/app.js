@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.static("./src/public"));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
-app.use(manejadorError);
+
 
 //Middleware compression
 //app.use(compression());
@@ -63,6 +63,7 @@ app.use("/", viewsRouter);
 //Middleware para Mock y manejo de errores
 app.use("/", prodRouter);
 app.use("/", produRouter);
+app.use(manejadorError);
 
 const httpServer = app.listen(PUERTO, () => {
     console.log(`Servidor escuchando en el puerto ${PUERTO}`);
